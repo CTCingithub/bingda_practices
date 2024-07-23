@@ -2,6 +2,7 @@
 #include "std_msgs/String.h"
 
 void chatterCallback(const std_msgs::String::ConstPtr &msg)
+// std_msgs::String::ConstPtr &msg references to a pointer to a String message
 {
     ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
