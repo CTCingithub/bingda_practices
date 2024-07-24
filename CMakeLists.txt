@@ -9,7 +9,9 @@ project(bingda_practices)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED
 roscpp
+rospy
 std_msgs
+message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -46,11 +48,10 @@ std_msgs
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  RGB_LED.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -67,10 +68,10 @@ std_msgs
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -102,10 +103,7 @@ std_msgs
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES bingda_practices
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
+ CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -135,6 +133,8 @@ ${catkin_INCLUDE_DIRS}
 # add_executable(${PROJECT_NAME}_node src/bingda_practices_node.cpp)
 add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
+add_executable(RGB_LED_Publisher src/RGB_LED_Publisher.cpp)
+add_executable(RGB_LED_Subscriber src/RGB_LED_Subscriber.cpp)
 
 ## Specify additional dependencies
 ## The catkin_package() call within the CMakeLists.txt file of each catkin package

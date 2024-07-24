@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="bingda_practices" type="talker" name="talker" output="log" respawn="true"/>
+    <node pkg="bingda_practices" type="listener" name="listener" output="screen" respawn="true"/>
+</launch>
