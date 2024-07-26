@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="bingda_practices" type="RGB_LED_Publisher" name="LED_Pub" output="log" respawn="true"/>
+  <node pkg="bingda_practices" type="RGB_LED_Subscriber" name="LED_Sub" output="screen" respawn="true"/>
+</launch>

@@ -163,6 +163,12 @@ target_link_libraries(talker
 target_link_libraries(listener
   ${catkin_LIBRARIES}
 )
+target_link_libraries(RGB_LED_Publisher
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(RGB_LED_Subscriber
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
