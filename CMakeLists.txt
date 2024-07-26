@@ -54,11 +54,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  AddTwoFloats.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -135,6 +134,7 @@ add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
 add_executable(RGB_LED_Publisher src/RGB_LED_Publisher.cpp)
 add_executable(RGB_LED_Subscriber src/RGB_LED_Subscriber.cpp)
+add_executable(AddTwoFloatsServer src/AddTwoFloatsServer.cpp)
 
 ## Specify additional dependencies
 ## The catkin_package() call within the CMakeLists.txt file of each catkin package
@@ -167,6 +167,9 @@ target_link_libraries(RGB_LED_Publisher
   ${catkin_LIBRARIES}
 )
 target_link_libraries(RGB_LED_Subscriber
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(AddTwoFloatsServer
   ${catkin_LIBRARIES}
 )
 
