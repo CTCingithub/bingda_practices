@@ -5,8 +5,8 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "RGB_LED_Publisher"); // 初始化ROS节点
     ros::NodeHandle n; // 创建节点句柄
-    ros::Publisher RGB_LED_Publisher = n.advertise<bingda_practices::RGB_LED>("RGB_LED", 10); // 发布RGB_LED主题
-    ros::Rate loop_rate(10); // 设置循环频率为10Hz
+    ros::Publisher RGB_LED_Publisher = n.advertise<bingda_practices::RGB_LED>("RGB_LED", 100); // 发布RGB_LED主题
+    ros::Rate loop_rate(1000); // 设置循环频率为10Hz
 
     int count = 0;
     ROS_INFO("RGB_LED_Publisher Start Publishing");
