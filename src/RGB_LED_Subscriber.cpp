@@ -11,7 +11,7 @@ void RGB_LED_Callback(bingda_practices::RGB_LED msg)
 int main(int argc, char **argv)
 {
     // 初始化ROS节点
-    ros::init(argc, argv, "RGB_LED_Listener");
+    ros::init(argc, argv, "RGB_LED_Subscriber");
     ros::NodeHandle n;
     // 订阅RGB_LED消息，并设置回调函数为RGB_LED_Callback
     ros::Subscriber sub = n.subscribe("RGB_LED", 1000, RGB_LED_Callback);

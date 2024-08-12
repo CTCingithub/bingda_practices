@@ -134,6 +134,7 @@ add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
 add_executable(RGB_LED_Publisher src/RGB_LED_Publisher.cpp)
 add_executable(RGB_LED_Subscriber src/RGB_LED_Subscriber.cpp)
+add_executable(RGB_LED_LogGen src/RGB_LED_LogGen.cpp)
 add_executable(AddTwoFloatsServer src/AddTwoFloatsServer.cpp)
 
 ## Specify additional dependencies
@@ -167,6 +168,9 @@ target_link_libraries(RGB_LED_Publisher
   ${catkin_LIBRARIES}
 )
 target_link_libraries(RGB_LED_Subscriber
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(RGB_LED_LogGen
   ${catkin_LIBRARIES}
 )
 target_link_libraries(AddTwoFloatsServer

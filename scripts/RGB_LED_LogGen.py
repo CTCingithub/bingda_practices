@@ -30,12 +30,12 @@ def main():
     rospy.loginfo(LogFileDir)
 
     logger.add(
-        sink=LogFileDir + "RGB_LED.log",
+        sink=LogFileDir + "RGB_LED.csv",
         level="INFO",
         # compression="zip",
         encoding="utf-8",
         enqueue=True,
-        format="{time:YYYY-MM-DD HH:mm:ss}|{message}",
+        format="{time:YYYY-MM-DD HH:mm:ss},{message}",
     )
     rospy.Subscriber("RGB_LED", RGB_LED, callback)
     rospy.spin()
