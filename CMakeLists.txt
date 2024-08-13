@@ -12,6 +12,7 @@ roscpp
 rospy
 std_msgs
 message_generation
+tf
 )
 
 ## System dependencies are found with CMake's conventions
@@ -135,6 +136,7 @@ add_executable(listener src/listener.cpp)
 add_executable(RGB_LED_Publisher src/RGB_LED_Publisher.cpp)
 add_executable(RGB_LED_Subscriber src/RGB_LED_Subscriber.cpp)
 add_executable(AddTwoFloatsServer src/AddTwoFloatsServer.cpp)
+add_executable(tf_transform src/tf_transform.cpp)
 
 ## Specify additional dependencies
 ## The catkin_package() call within the CMakeLists.txt file of each catkin package
@@ -170,6 +172,9 @@ target_link_libraries(RGB_LED_Subscriber
   ${catkin_LIBRARIES}
 )
 target_link_libraries(AddTwoFloatsServer
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(tf_transform
   ${catkin_LIBRARIES}
 )
 
