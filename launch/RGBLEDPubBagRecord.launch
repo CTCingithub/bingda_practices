@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="bingda_practices" type="RGB_LED_Publisher" name="LED_Pub" output="screen" respawn="true" />
+  <node pkg="rosbag" type="record" name="LED_Record"
+    args="RGB_LED RGB_LED -o /home/ctc/LearnROS/src/bingda_practices/bag/RGB_LED.bag"
+    output="screen" respawn="true" />
+</launch>
